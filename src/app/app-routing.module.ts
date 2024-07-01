@@ -6,9 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Routes = [
-  // { path: '', component: HeaderComponent },
   { path: 'products', component: ProductsComponent},
-  { path: 'about', component: AboutComponent}
+  { path: 'about', component: AboutComponent},
+  { path: '', redirectTo: '/products', pathMatch: 'full' }, // Default route
+  { path: '**', redirectTo: '/products' } // Wildcard route for 404
 ];
 
 @NgModule({
